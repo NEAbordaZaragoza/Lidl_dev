@@ -4,16 +4,16 @@ public with sharing class ProductLidlConverter {
   //from_ProductRest_to_Product_Lidl__c;
   Product_Lidl__c product = new Product_Lidl__c();
   
-  product.group_id__c = Decimal.Valueof(productRest.groupId);
-  product.group_name__c = productRest.groupname;
-  product.subgroup_Id__c = Decimal.valueof(productRest.subgroupId);
-  product.subgroup_name__c = productRest.subgroup;
-  product.family_id__c = Decimal.valueof(productRest.familyId);
-  product.family_name__c = productRest.family;
-  product.article_id__c = Decimal.valueof(productRest.ArticleId);
-  product.name = productRest.Name;
-  product.article_package__c = Decimal.valueof(productRest.articlePackage);
-  product.article_type__c = productRest.type;
+  product.group_id__c = Decimal.Valueof(productRest.article.groupId);
+  product.group_name__c = productRest.article.groupname;
+  product.subgroup_Id__c = Decimal.valueof(productRest.article.subgroupId);
+  product.subgroup_name__c = productRest.article.subgroup;
+  product.family_id__c = Decimal.valueof(productRest.article.familyId);
+  product.family_name__c = productRest.article.family;
+  product.article_id__c = Decimal.valueof(productRest.article.ArticleId);
+  product.name = productRest.article.Name;
+  product.article_package__c = Decimal.valueof(productRest.article.articlePackage);
+  product.article_type__c = productRest.article.type;
   /*product.article_images__c = */
     
   return product;
@@ -25,16 +25,16 @@ public with sharing class ProductLidlConverter {
   //from_Product_Lidl__c_to_ProductRest
   ProductRest product = new ProductRest();
   
-  product.groupId = String.valueof(productLidl.group_id__c);
-  product.groupname = productLidl.group_name__c;
-  product.subgroupId = String.valueof(productLidl.subgroup_Id__c);
-  product.subgroup = productlidl.subgroup_name__c;
-  product.familyId = String.valueof(productlidl.family_id__c);
-  product.family = productlidl.family_name__c;
-  product.ArticleId = String.valueof(productlidl.article_id__c);
-  product.Name = productlidl.name;
-  product.articlePackage = String.valueof(productlidl.article_package__c);
-  product.type = productlidl.article_type__c;
+  product.article.groupId = String.valueof(productLidl.group_id__c);
+  product.article.groupname = productLidl.group_name__c;
+  product.article.subgroupId = String.valueof(productLidl.subgroup_Id__c);
+  product.article.subgroup = productlidl.subgroup_name__c;
+  product.article.familyId = String.valueof(productlidl.family_id__c);
+  product.article.family = productlidl.family_name__c;
+  product.article.ArticleId = String.valueof(productlidl.article_id__c);
+  product.article.Name = productlidl.name;
+  product.article.articlePackage = String.valueof(productlidl.article_package__c);
+  product.article.type = productlidl.article_type__c;
   /*product.article.images = */
   
       
